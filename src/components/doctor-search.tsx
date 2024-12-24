@@ -1,10 +1,23 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { SearchHeader } from "@/components/search-header";
+import { FilterBar } from "@/components/filter-bar";
+import { DoctorCard } from "@/components/doctor-card";
 
-export default function Home() {
+export default function DoctorSearch() {
+  const doctors = Array(3).fill({
+    name: "Dr. Prerna Narang",
+    specialization: "Male-Female Infertility",
+    experience: "7 years of Experience",
+    languages: "English, Hindi, Marathi",
+    rating: 4.5,
+    videoPrice: "800",
+    chatPrice: "Free",
+  });
+
   return (
-    <main>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 bg-[#FDF9F3]">
         <div className="flex items-center gap-8">
           <Image
@@ -31,17 +44,17 @@ export default function Home() {
           <Button className="bg-[#446A46] hover:bg-[#385839]">Sign-up</Button>
         </div>
       </header>
-      <div className="w-screen flex flex-col items-center justify-center gap-10 mt-20">
-        <Link href="/doctor-profile">
-          <Button className="font-bold bg-[#446A46]">Go to Task 1</Button>
-        </Link>
-        <Link href="/doctor-search">
-          <Button className="font-bold bg-[#446A46]">Go to Task 2</Button>
-        </Link>
-        <Link href="/amrutam-landing">
-          <Button className="font-bold bg-[#446A46]">Go to Task 3</Button>
-        </Link>
-      </div>
-    </main>
+
+      <SearchHeader />
+      <FilterBar />
+
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {doctors.map((doctor, i) => (
+            <DoctorCard key={i} {...doctor} />
+          ))}
+        </div>
+      </main>
+    </div>
   );
 }
