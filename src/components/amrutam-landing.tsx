@@ -1,21 +1,23 @@
 import { AppPromotion } from "@/components/app-promotion";
 import { ExpertsCarousel } from "@/components/experts-carousel";
-import { FeaturesGrid } from "@/components/features-grid";
 import { HeroSection } from "@/components/hero-section";
 import { Navbar } from "@/components/navbar";
 import { ProcessSteps } from "@/components/process-steps";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
+import AyurvedicSection from "./ayurvedic-section";
 import { BenefitsSection } from "./benefits-section";
+import FeatureSection from "./feature-section";
 
 export default function AmrutamLanding() {
   return (
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <FeatureSection />
       <div className="min-h-screen bg-[#FDF9F3]">
         <BenefitsSection />
       </div>
-      <FeaturesGrid />
+      <AyurvedicSection />
       <div className="bg-gray-100 py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">

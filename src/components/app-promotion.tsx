@@ -13,7 +13,7 @@ export function AppPromotion() {
               The Globe
             </p>
             <p className="font-semibold mb-6">Get The App Now</p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               <a href="#" className="block w-44">
                 <img
                   src="/google-play.png"

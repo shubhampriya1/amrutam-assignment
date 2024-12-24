@@ -133,37 +133,38 @@ export function BenefitsSection() {
               );
             })}
           </div>
-
-          {/* Mobile Benefits List - Only shown below lg breakpoint */}
-          <div className="lg:hidden mt-8">
-            <div className="grid grid-cols-2 gap-4 px-4">
-              {benefits.map((benefit, index) => (
-                <div key={benefit.title} className="text-center">
-                  <div
-                    className={`w-12 h-12 rounded-full mx-auto ${
+        </div>
+        <div className="lg:hidden mt-8">
+          <div className="grid grid-cols-2 gap-4 px-4">
+            {benefits.map((benefit, index) => (
+              <div key={benefit.title} className="text-center">
+                <div
+                  className={`w-12 h-12 rounded-full mx-auto ${
+                    index === 3
+                      ? "bg-yellow-100"
+                      : index === 4
+                      ? "bg-green-100"
+                      : "bg-white"
+                  } shadow-lg flex items-center justify-center mb-2`}
+                >
+                  <benefit.icon
+                    className={`w-6 h-6 ${
                       index === 3
-                        ? "bg-yellow-100"
+                        ? "text-yellow-600"
                         : index === 4
-                        ? "bg-green-100"
-                        : "bg-white"
-                    } shadow-lg flex items-center justify-center mb-2`}
-                  >
-                    <benefit.icon
-                      className={`w-6 h-6 ${
-                        index === 3
-                          ? "text-yellow-600"
-                          : index === 4
-                          ? "text-green-600"
-                          : "text-[#446A46]"
-                      }`}
-                    />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 text-sm">
-                    {benefit.title}
-                  </h3>
+                        ? "text-green-600"
+                        : "text-[#446A46]"
+                    }`}
+                  />
                 </div>
-              ))}
-            </div>
+                <h3 className="font-semibold text-gray-900 text-sm">
+                  {benefit.title}
+                </h3>
+                <p className="text-xs mt-3 text-gray-800">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

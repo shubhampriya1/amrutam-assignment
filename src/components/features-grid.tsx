@@ -1,23 +1,26 @@
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card";
 
 export function FeaturesGrid() {
   const features = [
     {
       title: "Precise Diagnosis",
-      description: "Our experts carefully analyze your health patterns through detailed consultation.",
+      description:
+        "Our experts carefully analyze your health patterns through detailed consultation.",
       image: "/placeholder.svg?height=200&width=300",
     },
     {
       title: "Zero side-effects",
-      description: "Natural treatments that work in harmony with your body's healing mechanisms.",
+      description:
+        "Natural treatments that work in harmony with your body's healing mechanisms.",
       image: "/placeholder.svg?height=200&width=300",
     },
     {
       title: "Individual Treatment",
-      description: "Personalized care plans based on your unique health patterns.",
+      description:
+        "Personalized care plans based on your unique health patterns.",
       image: "/placeholder.svg?height=200&width=300",
     },
-  ]
+  ];
 
   return (
     <div className="py-24 bg-white">
@@ -42,6 +45,5 @@ export function FeaturesGrid() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
